@@ -346,23 +346,23 @@ func (s *testGCWorkerSuite) TestDoGCForOneRegion(c *C) {
 	c.Assert(err, IsNil)
 	s.checkCollected(c, p)
 
-	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult", `return("timeout")`), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Enable(`return("timeout")`), IsNil)
 	regionErr, err = s.gcWorker.doGCForRegion(bo, s.mustAllocTs(c), loc.Region)
 	c.Assert(regionErr, IsNil)
 	c.Assert(err, NotNil)
-	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult"), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Disable(), IsNil)
 
-	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult", `return("GCNotLeader")`), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Enable(`return("GCNotLeader")`), IsNil)
 	regionErr, err = s.gcWorker.doGCForRegion(bo, s.mustAllocTs(c), loc.Region)
 	c.Assert(regionErr.GetNotLeader(), NotNil)
 	c.Assert(err, IsNil)
-	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult"), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Disable(), IsNil)
 
-	c.Assert(failpoint.Enable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult", `return("GCServerIsBusy")`), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Enable(`return("GCServerIsBusy")`), IsNil)
 	regionErr, err = s.gcWorker.doGCForRegion(bo, s.mustAllocTs(c), loc.Region)
 	c.Assert(regionErr.GetServerIsBusy(), NotNil)
 	c.Assert(err, IsNil)
-	c.Assert(failpoint.Disable("github.com/shafreeck/tidbit/tikv/tikvStoreSendReqResult"), IsNil)
+	c.Assert(tikv.TiKVStoreSendReqResult.Disable(), IsNil)
 }
 
 func (s *testGCWorkerSuite) TestGetGCConcurrency(c *C) {

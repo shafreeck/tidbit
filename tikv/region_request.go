@@ -88,7 +88,7 @@ func (s *RegionRequestSender) SendReqCtx(
 	rpcCtx *RPCContext,
 	err error,
 ) {
-	failpoint.Inject("tikvStoreSendReqResult", func(val failpoint.Value) {
+    if val, err := TiKVStoreSendReqResult.Eval(); err != nil {}
 		switch val.(string) {
 		case "timeout":
 			failpoint.Return(nil, nil, errors.New("timeout"))
@@ -109,7 +109,7 @@ func (s *RegionRequestSender) SendReqCtx(
 				bo.vars.Hook("callBackofferHook", bo.vars)
 			}
 		}
-	})
+	}
 
 	var replicaRead kv.ReplicaReadType
 	if req.ReplicaRead {

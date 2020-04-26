@@ -677,11 +677,11 @@ func (worker *copIteratorWorker) handleTask(bo *Backoffer, task *copTask, respCh
 // handleTaskOnce handles single copTask, successful results are send to channel.
 // If error happened, returns error. If region split or meet lock, returns the remain tasks.
 func (worker *copIteratorWorker) handleTaskOnce(bo *Backoffer, task *copTask, ch chan<- *copResponse) ([]*copTask, error) {
-	failpoint.Inject("handleTaskOnceError", func(val failpoint.Value) {
+	if val, err := HandleTaskOnceError.Eval(); err != nil {
 		if val.(bool) {
 			failpoint.Return(nil, errors.New("mock handleTaskOnce error"))
 		}
-	})
+	}
 
 	copReq := coprocessor.Request{
 		Tp:        worker.req.Tp,
