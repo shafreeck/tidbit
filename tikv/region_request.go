@@ -88,7 +88,7 @@ func (s *RegionRequestSender) SendReqCtx(
 	rpcCtx *RPCContext,
 	err error,
 ) {
-    if val, err := TiKVStoreSendReqResult.Eval(); err != nil {}
+	if val, err := TiKVStoreSendReqResult.Eval(); err != nil {
 		switch val.(string) {
 		case "timeout":
 			failpoint.Return(nil, nil, errors.New("timeout"))
