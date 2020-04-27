@@ -193,6 +193,8 @@ github.com/pingcap/failpoint v0.0.0-20200423071610-b8deef1f672a h1:bomrpuZYlYP3O
 github.com/pingcap/failpoint v0.0.0-20200423071610-b8deef1f672a/go.mod h1:2Y1A1bUNJW9xqAB5OvjeQc8EVMPTkxJXAs1L71Dye1M=
 github.com/pingcap/failpoint v0.0.0-20200427070804-8906d88fa8cd h1:tipY4KZWPOa3kC4c2FhgrWM88FAiCgihyn7VdVqd8dw=
 github.com/pingcap/failpoint v0.0.0-20200427070804-8906d88fa8cd/go.mod h1:2Y1A1bUNJW9xqAB5OvjeQc8EVMPTkxJXAs1L71Dye1M=
+github.com/pingcap/failpoint v0.0.0-20200427092702-956ba06c8682 h1:k1qknWnqfsia4GSKzfKdZLutauGwPnAvlS/IVjwHbEo=
+github.com/pingcap/failpoint v0.0.0-20200427092702-956ba06c8682/go.mod h1:2Y1A1bUNJW9xqAB5OvjeQc8EVMPTkxJXAs1L71Dye1M=
 github.com/pingcap/fn v0.0.0-20191016082858-07623b84a47d h1:rCmRK0lCRrHMUbS99BKFYhK9YxJDNw0xB033cQbYo0s=
 github.com/pingcap/fn v0.0.0-20191016082858-07623b84a47d/go.mod h1:fMRU1BA1y+r89AxUoaAar4JjrhUkVDt0o0Np6V8XbDQ=
 github.com/pingcap/goleveldb v0.0.0-20191226122134-f82aafb29989 h1:surzm05a8C9dN8dIUmo4Be2+pMRb6f55i+UIYrluu2E=
@@ -241,6 +243,7 @@ github.com/rogpeppe/go-internal v1.3.0/go.mod h1:M8bDsm7K2OlrFYOpmOWEs/qY81heoFR
 github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44 h1:tB9NOR21++IjLyVx3/PCPhWMwqGNCMQEH96A6dMZ/gc=
 github.com/sergi/go-diff v1.0.1-0.20180205163309-da645544ed44/go.mod h1:0CfEIISq7TuYL3j771MWULgwwjU+GofnZX9QAmXWZgo=
 github.com/shafreeck/tidbit v0.0.0-20200427055130-ddddcb6a8438/go.mod h1:+4SdL74cdQ889tp52Otnn7dIAj0ILqAhDG+lDeZBsMA=
+github.com/shafreeck/tidbit v0.0.0-20200427071604-c5519ef2f7d8/go.mod h1:1Gfe6i/IAED6KwgBX20C16YLpBn0jfpMm4SMcw9USmc=
 github.com/shirou/gopsutil v2.19.10+incompatible h1:lA4Pi29JEVIQIgATSeftHSY0rMGI9CLrl2ZvDLiahto=
 github.com/shirou/gopsutil v2.19.10+incompatible/go.mod h1:5b4v6he4MtMOwMlS0TUMTu2PcXUg8+E1lC7eC3UO/RA=
 github.com/shirou/w32 v0.0.0-20160930032740-bb4de0191aa4 h1:udFKJ0aHUL60LboW/A+DfgoHVedieIzIXE8uylPue0U=
