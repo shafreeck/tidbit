@@ -104,7 +104,7 @@ func (s *tikvStore) splitBatchRegionsReq(bo *Backoffer, keys [][]byte, scatter b
 }
 
 func (s *tikvStore) batchSendSingleRegion(bo *Backoffer, batch batch, scatter bool) singleBatchResp {
-	if val, err := SplitRegionTimeout.Eval(); err != nil {
+	if val, err := SplitRegionTimeout.Eval(); err == nil {
 		if val.(bool) {
 			if _, ok := bo.ctx.Deadline(); ok {
 				<-bo.ctx.Done()
@@ -208,7 +208,7 @@ func (s *tikvStore) SplitRegions(ctx context.Context, splitKeys [][]byte, scatte
 }
 
 func (s *tikvStore) scatterRegion(regionID uint64) error {
-	if val, err := ScatterRegionTimeout.Eval(); err != nil {
+	if val, err := ScatterRegionTimeout.Eval(); err == nil {
 		if val.(bool) {
 			failpoint.Return(ErrPDServerTimeout)
 		}
