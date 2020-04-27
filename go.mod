@@ -3,6 +3,7 @@ module github.com/shafreeck/tidbit
 go 1.13
 
 require (
+	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548
 	github.com/dgraph-io/ristretto v0.0.1
 	github.com/dgryski/go-farm v0.0.0-20190423205320-6a90982ecee2
@@ -13,7 +14,7 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pingcap/check v0.0.0-20200212061837-5e12011dc712
 	github.com/pingcap/errors v0.11.5-0.20190809092503-95897b64e011
-	github.com/pingcap/failpoint v0.0.0-20200423071610-b8deef1f672a
+	github.com/pingcap/failpoint v0.0.0-20200427070804-8906d88fa8cd
 	github.com/pingcap/goleveldb v0.0.0-20191226122134-f82aafb29989
 	github.com/pingcap/kvproto v0.0.0-20200221125103-35b65c96516e
 	github.com/pingcap/log v0.0.0-20200117041106-d28c14d3b1cd
