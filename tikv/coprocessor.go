@@ -28,7 +28,6 @@ import (
 
 	"github.com/cznic/mathutil"
 	"github.com/pingcap/errors"
-	"github.com/pingcap/failpoint"
 	"github.com/pingcap/kvproto/pkg/coprocessor"
 	"github.com/pingcap/kvproto/pkg/kvrpcpb"
 	"github.com/pingcap/tidb/domain/infosync"
@@ -679,7 +678,7 @@ func (worker *copIteratorWorker) handleTask(bo *Backoffer, task *copTask, respCh
 func (worker *copIteratorWorker) handleTaskOnce(bo *Backoffer, task *copTask, ch chan<- *copResponse) ([]*copTask, error) {
 	if val, err := HandleTaskOnceError.Eval(); err == nil {
 		if val.(bool) {
-			failpoint.Return(nil, errors.New("mock handleTaskOnce error"))
+			return nil, errors.New("mock handleTaskOnce error")
 		}
 	}
 
