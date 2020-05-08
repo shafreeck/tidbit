@@ -3,7 +3,6 @@ module github.com/shafreeck/tidbit
 go 1.13
 
 require (
-	github.com/codahale/hdrhistogram v0.0.0-20161010025455-3a0bb77429bd // indirect
 	github.com/cznic/mathutil v0.0.0-20181122101859-297441e03548
 	github.com/dgraph-io/ristretto v0.0.1
 	github.com/dgryski/go-farm v0.0.0-20190423205320-6a90982ecee2
@@ -14,7 +13,7 @@ require (
 	github.com/opentracing/opentracing-go v1.1.0
 	github.com/pingcap/check v0.0.0-20200212061837-5e12011dc712
 	github.com/pingcap/errors v0.11.5-0.20190809092503-95897b64e011
-	github.com/pingcap/failpoint v0.0.0-20200427092702-956ba06c8682
+	github.com/pingcap/failpoint v0.0.0-20200506114213-c17f16071c53
 	github.com/pingcap/goleveldb v0.0.0-20191226122134-f82aafb29989
 	github.com/pingcap/kvproto v0.0.0-20200221125103-35b65c96516e
 	github.com/pingcap/log v0.0.0-20200117041106-d28c14d3b1cd
@@ -26,11 +25,10 @@ require (
 	github.com/shurcooL/httpfs v0.0.0-20190707220628-8d4bc4ba7749 // indirect
 	github.com/shurcooL/vfsgen v0.0.0-20181202132449-6a9ea43bcacd // indirect
 	github.com/spaolacci/murmur3 v0.0.0-20180118202830-f09979ecbc72
+	github.com/uber/jaeger-client-go v2.23.1+incompatible // indirect
 	github.com/uber/jaeger-lib v2.2.0+incompatible // indirect
 	go.etcd.io/etcd v0.5.0-alpha.5.0.20191023171146-3cf2f69b5738
 	go.uber.org/atomic v1.5.1
 	go.uber.org/zap v1.13.0
 	google.golang.org/grpc v1.25.1
 )
-
-replace github.com/pingcap/tidb => /Users/shafreeck/Codes/pingcap/tidb
